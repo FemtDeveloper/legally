@@ -2,32 +2,161 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components {
+  .btn-primary {
+    @apply py2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .d1 {
+    @apply text-[90px] tracking-tight leading-none;
+  }
+
+  .d2 {
+    @apply text-[60px] tracking-tight leading-none;
+  }
+
+  .d3 {
+    @apply text-[44px] tracking-normal leading-none;
+  }
+
+  .b1 {
+    @apply text-lg font-medium leading-normal;
+  }
+
+  .b2 {
+    @apply text-base font-medium leading-normal;
+  }
+
+  .b3 {
+    @apply text-[14px] tracking-[-0.56px];
+  }
+
+  .h1 {
+    @apply text-h1 leading-none tracking-light;
+  }
+
+  .h2 {
+    @apply text-2xl md:text-4xl font-normal tracking-normal;
+  }
+  .h2_bold {
+    @apply text-2xl md:text-4xl font-bold tracking-normal;
+  }
+
+  .h3 {
+    @apply text-2xl font-normal tracking-wide leading-none;
+  }
+
+  .h4_medium {
+    @apply text-[22px] tracking-normal leading-none font-medium;
+  }
+
+  .h4 {
+    @apply text-[16px] md:text-[22px] tracking-wider md:tracking-normal leading-none;
+  }
+
+  .l1 {
+    @apply text-[12px] tracking-[-0.48px];
+  }
+
+  .l2 {
+    @apply text-[10px];
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+::-webkit-scrollbar-track {
+  background-color: #252525c2;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+  background-color: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #b0b0b0;
+}
+
+:root {
+  --orange-gradient-background: linear-gradient(
+    90deg,
+    rgba(252, 75, 29, 0.2) 0%,
+    #fc4b1d 50%,
+    rgba(252, 75, 29, 0.2) 100%
+  );
+  --black-gradient-background: linear-gradient(
+    90deg,
+    #131313ec 0%,
+    #111111 50%,
+    #131313ec 100%
+  );
+  --grey-gradient-background: linear-gradient(
+    90deg,
+    #c5c5c5cb 0%,
+    rgba(27, 27, 27, 0.2) 50%,
+    #c5c5c5cb 100%
+  );
+  --white-gradient-background: radial-gradient(
+    circle,
+    #818181cb 0%,
+    #ffffff 50%,
+    #818181cb 100%
+  );
+  --white-oragnge-gradient: linear-gradient(
+    90deg,
+    #ff3908 0%,
+    #333333 50%,
+    #ffffff 100%
+  );
+  --bicolor-gradient: linear-gradient(
+    90deg,
+    rgba(255, 134, 74, 0.2) 0%,
+    rgba(255, 134, 74, 0.8) 50%,
+    rgba(61, 150, 244, 0.8) 50.01%,
+    rgba(61, 150, 244, 0.2) 100%
+  );
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #575757;
+  border-radius: 10px;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.glass {
+  background: #d6d6d646;
+  backdrop-filter: blur(30.5px);
+}
+.bg-main {
+  background-size: 100% 100%;
+  background-position: 0px 0px, 0px 0px;
+  background-image: radial-gradient(
+      113% 91% at 17% -2%,
+      #1588a2 1%,
+      #ff000000 99%
+    ),
+    radial-gradient(142% 91% at -6% 74%, #c1f3d6ff 1%, #ff000000 99%);
 }
